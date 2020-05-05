@@ -1,1 +1,14 @@
-<p>task3 works!</p>
+<div class="p-grid p-align-center">
+  <div class="p-col-8 p-col-align-center">
+    <p-button
+      label="{{ displayPassword ? 'Hide' : 'Display' }} Details"
+      icon="pi pi-eye" iconPos="left"
+      styleClass="ui-button-info ui-button-rounded"
+      (click)="handleClick()">
+    </p-button>
+    <p *ngIf="displayPassword">The secret password is: <strong>{{ hiddenPassword }}</strong></p>
+    <div class="logs">
+      <p [ngStyle]="" *ngFor="let log of logs">{{ log }}</p>
+    </div>
+  </div>
+</div>
